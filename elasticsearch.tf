@@ -35,10 +35,10 @@ resource "aws_security_group" "elasticsearch_sg" {
 
   ingress {
 
-    description = "Allow access to logstash"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1" # TCP + UDP
+    description     = "Allow access to logstash"
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1" # TCP + UDP
     security_groups = [aws_security_group.logstash_sg.id]
   }
   # outbound
@@ -53,11 +53,11 @@ resource "aws_security_group" "elasticsearch_sg" {
 
   #access to kibana
   egress {
-    description = "ACCESS TO KIBANA"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-  security_groups = [aws_security_group.kibana_sg.id]
+    description     = "ACCESS TO KIBANA"
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    security_groups = [aws_security_group.kibana_sg.id]
   }
 
 }
